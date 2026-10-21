@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>MSX DOOM — protótipo V9968 / Geo3D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Palco de 256x212 "pixels MSX" (SCREEN 8), ampliado por um fator inteiro (--s). -->
+<div id="stage">
+  <!-- Janela 3D: 256x180, o que o Geo3D desenharia (W=256, H=180). -->
+  <canvas id="view" width="256" height="180"></canvas>
+
+  <pre id="debug" hidden></pre>
+
+  <div id="overlay">
+    <div id="overlay-box">
+      <h1 id="overlay-title">MSX DOOM</h1>
+      <p id="overlay-sub">BASE MARTE &middot; SETOR V9968</p>
+      <ul id="overlay-help">
+        <li><b>CURSORES</b> andar e deslocar de lado</li>
+        <li><b>MOUSE</b> olhar &middot; <b>BOT&Atilde;O ESQUERDO</b> / <b>ESPA&Ccedil;O</b> atirar</li>
+        <li><b>Q / E</b> girar no teclado &middot; <b>M</b> som &middot; <b>F1</b> painel Geo3D</li>
+      </ul>
+      <p id="overlay-action">CLIQUE PARA INICIAR</p>
+    </div>
+  </div>
+
+  <!-- Barra de status: 256x32, fora da janela 3D (menos pixels para o Geo3D preencher). -->
+  <div id="statusbar">
+    <div class="panel">
+      <span class="label">VIDA</span>
+      <span class="value" id="hp-value">100%</span>
+      <span class="meter"><span id="hp-bar"></span></span>
+    </div>
+    <div class="panel panel-mid">
+      <span class="label" id="kills-label">ABATES 0/0</span>
+      <span class="message" id="message">MSX DOOM</span>
+    </div>
+    <div class="panel">
+      <span class="label">INIMIGOS</span>
+      <span class="value" id="enemy-value">0</span>
+    </div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

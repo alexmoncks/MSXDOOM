@@ -1,0 +1,237 @@
+{
+    "target":  "V9968 SCREEN 8 + EPAL (256 x 15-bit), Geo3D textures, sprite mode 3",
+    "palette":  "palette.pal: 256 x (R,G,B) 5-bit, 16 sets of 16",
+    "assets":  [
+                   {
+                       "name":  "wall_steel",
+                       "kind":  "texture",
+                       "file":  "wall_steel.idx",
+                       "width":  64,
+                       "height":  64,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  4096,
+                       "atlasX":  0,
+                       "atlasY":  0
+                   },
+                   {
+                       "name":  "wall_tech",
+                       "kind":  "texture",
+                       "file":  "wall_tech.idx",
+                       "width":  64,
+                       "height":  64,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  4096,
+                       "atlasX":  64,
+                       "atlasY":  0
+                   },
+                   {
+                       "name":  "wall_rock",
+                       "kind":  "texture",
+                       "file":  "wall_rock.idx",
+                       "width":  64,
+                       "height":  64,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  4096,
+                       "atlasX":  128,
+                       "atlasY":  0
+                   },
+                   {
+                       "name":  "floor",
+                       "kind":  "texture",
+                       "file":  "floor.idx",
+                       "width":  32,
+                       "height":  32,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  1024,
+                       "atlasX":  192,
+                       "atlasY":  0
+                   },
+                   {
+                       "name":  "ceil",
+                       "kind":  "texture",
+                       "file":  "ceil.idx",
+                       "width":  32,
+                       "height":  32,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  1024,
+                       "atlasX":  224,
+                       "atlasY":  0
+                   },
+                   {
+                       "name":  "ceil_light",
+                       "kind":  "texture",
+                       "file":  "ceil_light.idx",
+                       "width":  32,
+                       "height":  32,
+                       "paletteSet":  0,
+                       "dimSet":  0,
+                       "bytes":  1024,
+                       "atlasX":  192,
+                       "atlasY":  32
+                   },
+                   {
+                       "name":  "fiend_walk1",
+                       "kind":  "sprite",
+                       "file":  "fiend_walk1.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "fiend_walk2",
+                       "kind":  "sprite",
+                       "file":  "fiend_walk2.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "fiend_attack",
+                       "kind":  "sprite",
+                       "file":  "fiend_attack.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "fiend_pain",
+                       "kind":  "sprite",
+                       "file":  "fiend_pain.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "fiend_dying",
+                       "kind":  "sprite",
+                       "file":  "fiend_dying.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "fiend_dead",
+                       "kind":  "sprite",
+                       "file":  "fiend_dead.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  7,
+                       "dimSet":  8,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_walk1",
+                       "kind":  "sprite",
+                       "file":  "zombie_walk1.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_walk2",
+                       "kind":  "sprite",
+                       "file":  "zombie_walk2.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_attack",
+                       "kind":  "sprite",
+                       "file":  "zombie_attack.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_pain",
+                       "kind":  "sprite",
+                       "file":  "zombie_pain.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_dying",
+                       "kind":  "sprite",
+                       "file":  "zombie_dying.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "zombie_dead",
+                       "kind":  "sprite",
+                       "file":  "zombie_dead.idx",
+                       "width":  48,
+                       "height":  64,
+                       "paletteSet":  9,
+                       "dimSet":  10,
+                       "bytes":  3072
+                   },
+                   {
+                       "name":  "pistol",
+                       "kind":  "sprite",
+                       "file":  "pistol.idx",
+                       "width":  64,
+                       "height":  128,
+                       "paletteSet":  11,
+                       "dimSet":  11,
+                       "bytes":  8192
+                   },
+                   {
+                       "name":  "medkit",
+                       "kind":  "sprite",
+                       "file":  "medkit.idx",
+                       "width":  32,
+                       "height":  32,
+                       "paletteSet":  12,
+                       "dimSet":  12,
+                       "bytes":  1024
+                   },
+                   {
+                       "name":  "muzzle_flash",
+                       "kind":  "sprite",
+                       "file":  "muzzle_flash.idx",
+                       "width":  32,
+                       "height":  32,
+                       "paletteSet":  12,
+                       "dimSet":  12,
+                       "bytes":  1024
+                   }
+               ],
+    "worldAtlas":  {
+                       "file":  "world_atlas.sc8",
+                       "width":  256,
+                       "height":  448,
+                       "format":  "8bpp EPAL index",
+                       "tstride":  64,
+                       "copies":  7,
+                       "note":  "copy n = light level n (0 darkest); TEXY = base + level * TSTRIDE"
+                   }
+}

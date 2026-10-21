@@ -1,0 +1,192 @@
+/* MSX DOOM — tudo é medido em "pixels MSX": --u = 1 pixel do SCREEN 8 ampliado --s vezes.
+   O valor de --s é definido em js/game.js (maior fator inteiro que cabe na janela). */
+:root {
+  --s: 3;
+  --u: calc(1px * var(--s));
+  --red: #f81810;
+  --red-dim: #7b0808;
+  --amber: #e8a000;
+  --steel: #3a3a3a;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Consolas, "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+  color: #ccc;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 256 x 212, com a "borda" do MSX em vermelho escuro (cor de borda do VDP). */
+#stage {
+  position: relative;
+  width: calc(256 * var(--u));
+  height: calc(212 * var(--u));
+  background: #000;
+  box-shadow: 0 0 0 calc(6 * var(--u)) #180000;
+}
+
+#view {
+  display: block;
+  width: calc(256 * var(--u));
+  height: calc(180 * var(--u));
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  cursor: crosshair;
+}
+
+/* ------------------------------------------------------------ barra de status */
+#statusbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(32 * var(--u));
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 80fr 90fr 80fr;
+  gap: calc(2 * var(--u));
+  padding: calc(2 * var(--u));
+  border-top: var(--u) solid #6b6b6b;
+  background: repeating-linear-gradient(90deg,
+    var(--steel) 0 calc(2 * var(--u)),
+    #313131 calc(2 * var(--u)) calc(4 * var(--u)));
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--u);
+  background: #120303;
+  border: var(--u) solid;
+  border-color: #080808 #5a5a5a #5a5a5a #080808;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.label {
+  font-size: calc(6 * var(--u));
+  letter-spacing: calc(0.5 * var(--u));
+  color: #a5a5a5;
+}
+
+.value {
+  font-size: calc(13 * var(--u));
+  color: var(--red);
+  text-shadow: var(--u) var(--u) 0 #420000;
+}
+
+.value.low { color: var(--amber); animation: blink 0.5s steps(2) infinite; }
+
+.meter {
+  width: 80%;
+  height: calc(2 * var(--u));
+  background: #310000;
+}
+#hp-bar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--red);
+}
+
+.panel-mid { gap: calc(3 * var(--u)); }
+.message {
+  font-size: calc(7 * var(--u));
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ telas (título, pausa, fim) */
+#overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(180 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 0, 0, 0.72);
+  cursor: pointer;
+}
+#overlay[hidden] { display: none; }
+
+#overlay-box {
+  text-align: center;
+  padding: calc(6 * var(--u)) calc(10 * var(--u));
+  border: var(--u) solid var(--red-dim);
+  background: rgba(0, 0, 0, 0.8);
+  max-width: calc(236 * var(--u));
+  box-sizing: border-box;
+}
+
+#overlay-title {
+  margin: 0;
+  font-size: calc(26 * var(--u));
+  line-height: 1;
+  letter-spacing: calc(2 * var(--u));
+  color: var(--red);
+  text-shadow: calc(2 * var(--u)) calc(2 * var(--u)) 0 #420000;
+}
+
+#overlay-sub {
+  margin: calc(4 * var(--u)) 0 calc(6 * var(--u));
+  font-size: calc(7 * var(--u));
+  color: var(--amber);
+  letter-spacing: var(--u);
+}
+
+#overlay-help {
+  list-style: none;
+  margin: 0 0 calc(6 * var(--u));
+  padding: 0;
+  font-size: calc(5.5 * var(--u));
+  line-height: 1.6;
+  color: #a5a5a5;
+  text-transform: none;
+}
+#overlay-help b { color: #fff; }
+
+#overlay-action {
+  margin: 0;
+  font-size: calc(8 * var(--u));
+  color: #fff;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.25; } }
+
+/* ------------------------------------------------------------ painel Geo3D (F1) */
+#debug {
+  position: absolute;
+  left: calc(2 * var(--u));
+  top: calc(2 * var(--u));
+  margin: 0;
+  padding: calc(2 * var(--u)) calc(3 * var(--u));
+  font: 400 calc(5 * var(--u)) / 1.35 Consolas, "Lucida Console", monospace;
+  text-transform: none;
+  color: #5edc78;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+  white-space: pre;
+}
+#debug[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .value.low, #overlay-action { animation: none; }
+}
